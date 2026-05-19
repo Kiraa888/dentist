@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxDent Studio | World-Class Cosmetic Dentistry & Smile Design</title>
+    <meta name="description" content="LuxDent Studio — Premium cosmetic dentistry and smile design center. Award-winning dental care with cutting-edge technology. Book your consultation.">
+    <meta name="keywords" content="cosmetic dentistry, smile design, dental implants, teeth whitening, Invisalign, luxury dental clinic, emergency dentist">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://luxdent.studio">
+    
+    <!-- Open Graph & Twitter Card Metadata -->
+    <meta property="og:title" content="LuxDent Studio | World-Class Cosmetic Dentistry">
+    <meta property="og:description" content="Premium dental care with artistry and precision. Transform your smile at the most trusted luxury dental clinic.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&h=630&fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Performance Optimizations: Preconnect & Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=750&fit=crop&crop=face&q=80" fetchpriority="high">
+    
+    <!-- Typography & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Global Project Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Production Dependencies: Supabase & EmailJS Client SDKs -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Premium Global Toast Container -->
+    <div id="toast-container" class="toast-container" aria-live="pure"></div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" aria-hidden="true"><div class="loader-pulse"></div></div>
+
+    <!-- Mobile UI Structural Elements -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="#book" class="btn btn-primary w-full" style="margin-top:12px;">Book Appointment</a>
+    </nav>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#home" class="navbar-logo"><span class="logo-icon"><i class="fa-solid fa-tooth"></i></span> LuxDent</a>
+            <ul class="navbar-links" role="list">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon"></i></button>
+                <a href="#book" class="btn btn-primary btn-sm">Book Now</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Showcase Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-orb orb-1"></div><div class="hero-bg-orb orb-2"></div><div class="hero-bg-orb orb-3"></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="section-label">✨ Premium Dental Care</span>
+                <h1>Your <span class="accent">Perfect Smile</span> Starts Here</h1>
+                <p>Experience world-class cosmetic dentistry at LuxDent Studio — where cutting-edge technology meets artistic precision. Trusted by 15,000+ happy patients worldwide.</p>
+                <div class="hero-cta-group">
+                    <a href="#book" class="btn btn-primary btn-lg">Book Appointment</a>
+                    <a href="https://wa.me/1234567890?text=Hello%20LuxDent%2C%20I%20would%20like%20a%20consultation" target="_blank" rel="noopener" class="btn btn-outline btn-lg"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                </div>
+                <div class="hero-trust">
+                    <div class="hero-rating"><span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span> 4.9 / 5 · 2,800+ Reviews</div>
+                    <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> ISO Certified</div>
+                    <div class="trust-item"><i class="fa-solid fa-award"></i> Award Winning</div>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-image-card">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=750&fit=crop&crop=face&q=80" alt="Professional dentist at LuxDent Studio" fetchpriority="high" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;font-size:8rem;color:#0d9488;&quot;>🦷</div>';">
+                    <div class="floating-badge badge-1"><i class="fa-solid fa-circle-check" style="color:#0d9488;"></i> 15,000+ Smiles</div>
+                    <div class="floating-badge badge-2"><i class="fa-solid fa-trophy" style="color:#c8a45c;"></i> Top 1% Dentists</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinic Overview / About Section -->
+    <section class="section" id="about">
+        <span class="section-label">About Us</span>
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&h=450&fit=crop&q=80" alt="LuxDent Studio clinic interior" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;font-size:5rem;color:#0d9488;background:#e8f4f8;border-radius:32px;&quot;>🏥</div>';">
+            </div>
+            <div>
+                <h2 class="section-title">Redefining Dental Excellence Since 2010</h2>
+                <p class="section-subtitle">At LuxDent Studio, we blend advanced dental technology with artistic finesse. Our team of internationally trained specialists delivers pain-free, luxurious dental experiences tailored to your unique smile.</p>
+                <div class="about-stats">
+                    <div class="stat-card"><div class="stat-number" data-count="14">0+</div><div class="stat-label">Years Experience</div></div>
+                    <div class="stat-card"><div class="stat-number" data-count="15000">0+</div><div class="stat-label">Happy Patients</div></div>
+                    <div class="stat-card"><div class="stat-number" data-count="28">0</div><div class="stat-label">Awards Won</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Services Grid -->
+    <section class="section" id="services">
+        <div class="text-center" style="margin-bottom:40px;"><span class="section-label">Our Services</span><h2 class="section-title mx-auto">Comprehensive Dental Care</h2><p class="section-subtitle mx-auto">From routine cleanings to complete smile makeovers, we offer a full spectrum of premium dental services.</p></div>
+        <div class="services-grid">
+            <div class="service-card"><div class="service-icon"><i class="fa-solid fa-broom"></i></div><h3>Teeth Cleaning</h3><p>Professional scaling and polishing using ultrasonic technology.</p><a href="#book" class="learn-more" tabindex="-1">Learn more <i class="fa-solid fa-arrow-right"></i></a></div>
+            <div class="service-card"><div class="service-icon"><i class="fa-solid fa-tooth"></i></div><h3>Root Canal</h3><p>Painless microscopic root canal therapy to save natural teeth.</p><a href="#book" class="learn-more" tabindex="-1">Learn more <i class="fa-solid fa-arrow-right"></i></a></div>
+            <div class="service-card"><div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div><h3>Dental Implants</h3><p>Titanium implants that look and function like natural teeth.</p><a href="#book" class="learn-more" tabindex="-1">Learn more <i class="fa-solid fa-arrow-right"></i></a></div>
+            <div class="service-card"><div class="service-icon"><i class="fa-solid fa-teeth"></i></div><h3>Braces & Invisalign</h3><p>Clear aligners for perfectly aligned teeth without metal brackets.</p><a href="#book" class="learn-more" tabindex="-1">Learn more <i class="fa-solid fa-arrow-right"></i></a></div>
+            <div class="service-card"><div class="service-icon"><i class="fa-solid fa-star"></i></div><h3>Teeth Whitening</h3><p>Laser whitening — up to 8 shades brighter in one session.</p><a href="#book" class="learn-more" tabindex="-1">Learn more <i class="fa-solid fa-arrow-right"></i></a></div>
+            <div class="service-card"><div class="service-icon"><i class="fa-solid fa-face-smile"></i></div><h3>Smile Design</h3><p>Digital smile design with 3D preview before treatment.</p><a href="#book" class="learn-more" tabindex="-1">Learn more <i class="fa-solid fa-arrow-right"></i></a></div>
+            <div class="service-card"><div class="service-icon"><i class="fa-solid fa-child"></i></div><h3>Pediatric Dentistry</h3><p>Gentle, fun dental care for children in a welcoming environment.</p><a href="#book" class="learn-more" tabindex="-1">Learn more <i class="fa-solid fa-arrow-right"></i></a></div>
+            <div class="service-card"><div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>Cosmetic Dentistry</h3><p>Veneers, bonding, and full mouth rehabilitation.</p><a href="#book" class="learn-more" tabindex="-1">Learn more <i class="fa-solid fa-arrow-right"></i></a></div>
+            <div class="service-card"><div class="service-icon"><i class="fa-solid fa-truck-medical"></i></div><h3>Emergency Care</h3><p>24/7 emergency services — immediate relief when you need it.</p><a href="#book" class="learn-more" tabindex="-1">Learn more <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+    </section>
+
+    <!-- Professional Roster / Medical Team -->
+    <section class="section" id="doctors">
+        <div class="text-center" style="margin-bottom:40px;"><span class="section-label">Our Team</span><h2 class="section-title mx-auto">Meet Our Expert Dentists</h2></div>
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <div class="doc-img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face&q=80" alt="Dr. Sarah Chen" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:300px;font-size:5rem;color:#0d9488;&quot;>👩‍⚕️</div>';"></div>
+                <h3>Dr. Sarah Chen</h3><p class="doc-spec">Lead Cosmetic Dentist</p><p class="doc-exp">DDS, MSc · 15+ Years</p><div class="doc-social"><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a></div><a href="#book" class="btn btn-outline btn-sm w-full" style="margin-top:12px;">Book with Dr. Chen</a>
+            </div>
+            <div class="doctor-card">
+                <div class="doc-img"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=300&h=300&fit=crop&crop=face&q=80" alt="Dr. James Rodriguez" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:300px;font-size:5rem;color:#0d9488;&quot;>👨‍⚕️</div>';"></div>
+                <h3>Dr. James Rodriguez</h3><p class="doc-spec">Implantologist</p><p class="doc-exp">DMD, PhD · 12+ Years</p><div class="doc-social"><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a></div><a href="#book" class="btn btn-outline btn-sm w-full" style="margin-top:12px;">Book with Dr. Rodriguez</a>
+            </div>
+            <div class="doctor-card">
+                <div class="doc-img"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&h=300&fit=crop&crop=face&q=80" alt="Dr. Emily Park" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:300px;font-size:5rem;color:#0d9488;&quot;>👩‍⚕️</div>';"></div>
+                <h3>Dr. Emily Park</h3><p class="doc-spec">Orthodontist</p><p class="doc-exp">BDS, MOrth · 10+ Years</p><div class="doc-social"><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a></div><a href="#book" class="btn btn-outline btn-sm w-full" style="margin-top:12px;">Book with Dr. Park</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Intent Booking Engine -->
+    <section class="section" id="book">
+        <div class="text-center" style="margin-bottom:40px;"><span class="section-label">Appointment</span><h2 class="section-title mx-auto">Book Your Consultation</h2><p class="section-subtitle mx-auto">Schedule your visit in 30 seconds. We'll confirm via email and WhatsApp.</p></div>
+        <div class="booking-form-wrapper" id="bookingFormWrapper">
+            <form id="bookingForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" placeholder="John Doe" required aria-required="true"></div>
+                    <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" placeholder="+1 (555) 000-0000" required aria-required="true"></div>
+                    <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" placeholder="john@example.com" required aria-required="true"></div>
+                    <div class="form-group"><label for="service">Service Needed *</label><select id="service" required aria-required="true"><option value="">Select a service</option><option>Teeth Cleaning</option><option>Root Canal</option><option>Dental Implants</option><option>Braces & Invisalign</option><option>Teeth Whitening</option><option>Smile Design</option><option>Pediatric Dentistry</option><option>Cosmetic Dentistry</option><option>Emergency Dental Care</option></select></div>
+                    <div class="form-group"><label for="date">Preferred Date *</label><input type="date" id="date" required aria-required="true"></div>
+                    <div class="form-group"><label for="time">Preferred Time *</label><select id="time" required aria-required="true"><option value="">Select time</option><option>09:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>02:00 PM</option><option>03:00 PM</option><option>04:00 PM</option><option>05:00 PM</option></select></div>
+                    <div class="form-group full"><label for="message">Additional Message</label><textarea id="message" rows="3" placeholder="Any specific concerns..."></textarea></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-full" style="margin-top:20px;" id="submitBookingBtn">
+                    <span class="btn-text"><i class="fa-solid fa-calendar-check"></i> Confirm Booking</span>
+                    <span class="btn-loader hidden"></span>
+                </button>
+            </form>
+            <div class="form-success" id="formSuccess"><div class="check-circle"><i class="fa-solid fa-check"></i></div><h3 style="color:var(--gray-900);margin-bottom:8px;">Booking Confirmed!</h3><p style="color:var(--gray-500);">Your appointment has been securely synchronized with our backend systems. Check your email for verification details.</p></div>
+        </div>
+    </section>
+
+    <!-- Social Proof Testimonials Component -->
+    <section class="section" id="testimonials">
+        <div class="text-center" style="margin-bottom:40px;"><span class="section-label">Testimonials</span><h2 class="section-title mx-auto">What Our Patients Say</h2></div>
+        <div class="testimonials-carousel" id="testimonialCarousel">
+            <div class="testimonial-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"Absolutely transformative experience! Dr. Chen designed my new smile and I can't stop smiling."</p><div class="reviewer"><div class="reviewer-avatar">AK</div><div><strong>Amanda K.</strong><br><small>Smile Design Patient</small></div></div></div>
+            <div class="testimonial-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"Best dental experience of my life. The implant procedure was painless."</p><div class="reviewer"><div class="reviewer-avatar">MR</div><div><strong>Michael R.</strong><br><small>Implant Patient</small></div></div></div>
+            <div class="testimonial-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"My daughter loves coming here! The pediatric team is so gentle."</p><div class="reviewer"><div class="reviewer-avatar">SL</div><div><strong>Sarah L.</strong><br><small>Mother of Patient</small></div></div></div>
+            <div class="testimonial-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"Invisalign treatment was smooth and the results exceeded expectations."</p><div class="reviewer"><div class="reviewer-avatar">DP</div><div><strong>David P.</strong><br><small>Invisalign Patient</small></div></div></div>
+        </div>
+    </section>
+
+    <!-- Interactive Smile Transformation Display -->
+    <section class="section" id="gallery">
+        <div class="text-center" style="margin-bottom:40px;"><span class="section-label">Smile Gallery</span><h2 class="section-title mx-auto">Before & After Transformations</h2><p class="section-subtitle mx-auto">Drag the slider to see real patient results.</p></div>
+        <div class="comparison-slider" id="comparisonSlider">
+            <div class="img-before">
+                <img src="https://images.unsplash.com/photo-1597843817112-9c18dce8c13f?w=800&q=80" alt="Before Treatment" loading="lazy">
+            </div>
+            <div class="img-after">
+                <img src="https://images.unsplash.com/photo-1606265752439-1ebeb3c22423?w=800&q=80" alt="After Treatment" loading="lazy">
+            </div>
+            <div class="slider-handle" id="sliderHandle"></div>
+        </div>
+        <div class="comparison-labels"><span>Before</span><span>After</span></div>
+    </section>
+
+    <!-- Tiered Structural Pricing Tiers -->
+    <section class="section" id="pricing">
+        <div class="text-center" style="margin-bottom:40px;"><span class="section-label">Pricing</span><h2 class="section-title mx-auto">Transparent Pricing Plans</h2></div>
+        <div class="pricing-grid">
+            <div class="pricing-card"><p class="plan-name">Basic Care</p><p class="plan-price">$99<span>/visit</span></p><ul><li><i class="fa-solid fa-check"></i> Dental Checkup</li><li><i class="fa-solid fa-check"></i> Basic Cleaning</li><li><i class="fa-solid fa-check"></i> X-Ray Imaging</li><li><i class="fa-solid fa-check"></i> Oral Cancer Screening</li><li><i class="fa-solid fa-xmark" style="color:#ccc;"></i> Cosmetic Consultation</li></ul><a href="#book" class="btn btn-outline w-full">Get Started</a></div>
+            <div class="pricing-card featured"><span class="pricing-badge">Most Popular</span><p class="plan-name">Advanced Care</p><p class="plan-price">$249<span>/visit</span></p><ul><li><i class="fa-solid fa-check"></i> Everything in Basic</li><li><i class="fa-solid fa-check"></i> Deep Cleaning</li><li><i class="fa-solid fa-check"></i> Cosmetic Consultation</li><li><i class="fa-solid fa-check"></i> 3D Smile Preview</li><li><i class="fa-solid fa-check"></i> Priority Booking</li></ul><a href="#book" class="btn btn-primary w-full">Choose Plan</a></div>
+            <div class="pricing-card"><p class="plan-name">Premium Concierge</p><p class="plan-price">$599<span>/visit</span></p><ul><li><i class="fa-solid fa-check"></i> Everything in Advanced</li><li><i class="fa-solid fa-check"></i> Full Smile Design</li><li><i class="fa-solid fa-check"></i> VIP Concierge</li><li><i class="fa-solid fa-check"></i> 24/7 Doctor Access</li><li><i class="fa-solid fa-check"></i> Lifetime Warranty</li></ul><a href="#book" class="btn btn-gold w-full">Go Premium</a></div>
+        </div>
+    </section>
+
+    <!-- FAQ Semantic Accordion Component -->
+    <section class="section" id="faq">
+        <div class="text-center" style="margin-bottom:40px;"><span class="section-label">FAQ</span><h2 class="section-title mx-auto">Frequently Asked Questions</h2></div>
+        <div class="faq-list" role="list">
+            <div class="faq-item active"><button class="faq-question" aria-expanded="true"><span>Is dental treatment painful at LuxDent?</span><i class="fa-solid fa-chevron-down"></i></button><div class="faq-answer"><p>We use the latest pain-free techniques including laser dentistry and sedation options. Most patients report feeling completely comfortable.</p></div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Do you accept dental insurance?</span><i class="fa-solid fa-chevron-down"></i></button><div class="faq-answer"><p>Yes, we accept all major dental insurance plans and offer flexible payment options including 0% financing.</p></div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>How long does a smile design take?</span><i class="fa-solid fa-chevron-down"></i></button><div class="faq-answer"><p>A complete smile design typically takes 2-4 visits over 4-6 weeks. We provide a detailed timeline during consultation.</p></div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>What is your cancellation policy?</span><i class="fa-solid fa-chevron-down"></i></button><div class="faq-answer"><p>Free cancellation up to 24 hours before your appointment. Late cancellations may incur a small fee.</p></div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Do you offer emergency dental services?</span><i class="fa-solid fa-chevron-down"></i></button><div class="faq-answer"><p>Absolutely. We provide 24/7 emergency dental care. Call our emergency line anytime.</p></div></div>
+        </div>
+    </section>
+
+    <!-- Urgent Conversion Hot-Zone -->
+    <section class="section"><div class="emergency-banner"><i class="fa-solid fa-phone-volume" style="font-size:2.5rem;color:#dc2626;"></i><h2>24/7 Emergency Dental Care</h2><p style="color:var(--gray-600);max-width:500px;">Immediate relief for dental emergencies. Walk-ins welcome.</p><a href="tel:+1234567890" class="emergency-phone">+1 (234) 567-8900</a><a href="tel:+1234567890" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Call Now</a></div></section>
+
+    <!-- Educational Resource Content Hub -->
+    <section class="section" id="blog"><div class="text-center" style="margin-bottom:40px;"><span class="section-label">Blog</span><h2 class="section-title mx-auto">Oral Health Insights</h2></div><div class="blog-grid"><div class="blog-card"><div class="blog-img">🪥</div><div class="blog-body"><span class="blog-tag">Oral Hygiene</span><h3>10 Tips for a Brighter Smile Naturally</h3><p>Science-backed methods to whiten your teeth at home...</p></div></div><div class="blog-card"><div class="blog-img">🦷</div><div class="blog-body"><span class="blog-tag">Cosmetic Dentistry</span><h3>Veneers vs. Bonding: Which Is Right for You?</h3><p>Comprehensive comparison of two popular smile enhancements...</p></div></div><div class="blog-card"><div class="blog-img">👶</div><div class="blog-body"><span class="blog-tag">Pediatric</span><h3>Your Child's First Dental Visit</h3><p>How to prepare your little one for a positive experience...</p></div></div></div></section>
+
+    <!-- Contact Mapping Block -->
+    <section class="section" id="contact"><div class="text-center" style="margin-bottom:40px;"><span class="section-label">Contact</span><h2 class="section-title mx-auto">Get In Touch</h2></div><div class="contact-grid"><div class="contact-info-list"><div class="ci-item"><div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div><div><strong>Address</strong><br>123 Smile Avenue, Beverly Hills, CA 90210</div></div><div class="ci-item"><div class="ci-icon"><i class="fa-solid fa-phone"></i></div><div><strong>Phone</strong><br>+1 (234) 567-8900</div></div><div class="ci-item"><div class="ci-icon"><i class="fa-solid fa-envelope"></i></div><div><strong>Email</strong><br>hello@luxdent.studio</div></div><div class="ci-item"><div class="ci-icon"><i class="fa-solid fa-clock"></i></div><div><strong>Hours</strong><br>Mon-Fri: 8AM–7PM | Sat: 9AM–5PM</div></div></div><div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.8538529720716!2d-118.4085!3d34.0736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0x8b7a7c7e9f0b3d1a!2sBeverly%20Hills%2C%20CA%2090210!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen="" loading="lazy" title="Clinic location on Google Maps"></iframe></div></div></section>
+
+    <!-- Corporate Footer Node -->
+    <footer class="footer"><div class="footer-grid"><div><h4 class="footer-brand">LuxDent Studio</h4><p style="font-size:0.85rem;color:#94a3b8;">World-class cosmetic dentistry and smile design center. Transforming smiles since 2010.</p></div><div><h4>Quick Links</h4><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#pricing">Pricing</a></div><div><h4>Services</h4><a href="#services">Teeth Cleaning</a><a href="#services">Implants</a><a href="#services">Smile Design</a><a href="#services">Invisalign</a></div><div><h4>Newsletter</h4><p style="font-size:0.85rem;color:#94a3b8;">Get dental tips and exclusive offers.</p><div class="newsletter-input"><input type="email" placeholder="Your email" aria-label="Email"><button class="btn btn-primary btn-sm" id="newsletterSubscribeBtn">Subscribe</button></div></div></div><div class="footer-bottom">&copy; 2026 LuxDent Studio. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a></div></footer>
+
+    <!-- High-Impact Conversion Anchors (Mobile Bottom Dock + Widget Float) -->
+    <div class="mobile-sticky-cta">
+        <a href="tel:+1234567890" class="btn btn-outline w-full" style="padding: 12px; margin-right: 10px;"><i class="fa-solid fa-phone"></i> Call Us</a>
+        <a href="#book" class="btn btn-primary w-full" style="padding: 12px;"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
+    </div>
+
+    <a href="https://wa.me/1234567890?text=Hello%20LuxDent%2C%20I%20need%20a%20consultation" target="_blank" rel="noopener" class="whatsapp-float" id="whatsappFloat" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <div class="whatsapp-popup" id="whatsappPopup"><p style="font-weight:600;">Quick WhatsApp Consultation</p><textarea id="whatsappMsg" placeholder="Hi, I'd like to know more...">Hello LuxDent, I would like a consultation.</textarea><a href="https://wa.me/1234567890" target="_blank" rel="noopener" class="btn btn-primary w-full" style="background:#25d366;" id="whatsappSendBtn"><i class="fa-brands fa-whatsapp"></i> Send Message</a></div>
+
+    <!-- Structured JSON-LD Data Matrix -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "LuxDent Studio",
+      "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&h=630&fit=crop",
+      "address": { "@type": "PostalAddress", "streetAddress": "123 Smile Avenue", "addressLocality": "Beverly Hills", "addressRegion": "CA", "postalCode": "90210" },
+      "telephone": "+1234567890",
+      "priceRange": "$$$",
+      "sameAs": [
+        "https://instagram.com/luxdentstudio",
+        "https://facebook.com/luxdentstudio"
+      ],
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "17:00" }
+      ],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2800" }
+    }
+    </script>
+
+    <!-- Unified Execution Controller File Link -->
+    <script src="app.js"></script>
+</body>
+</html>
